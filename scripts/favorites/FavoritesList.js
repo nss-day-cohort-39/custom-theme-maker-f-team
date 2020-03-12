@@ -1,6 +1,8 @@
 import { useFavorites } from "./FavoritesProvider.js"
 import { FavoriteItem } from "./FavoriteItem.js"
 
+const eventHub = document.querySelector("#container")
+
 export const FavoritesList = () => {
     const favoriteItems = useFavorites()
     return render(favoriteItems)
@@ -13,3 +15,15 @@ const render = favoriteCollection => {
         </article>
     `
 }
+
+
+
+eventHub.addEventListener("sizeChosen", event => {
+    const size = event.detail.size
+
+    const contentTarget = document.querySelectorAll(".favorite")
+
+    contentTarget.classList = "favorite"
+    contentTarget.classList.add(size)
+
+})

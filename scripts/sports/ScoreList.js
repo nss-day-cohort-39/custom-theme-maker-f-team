@@ -13,3 +13,14 @@ const render = scoreCollection => {
         </article>
     `
 }
+
+const eventHub = document.querySelector("#container")
+
+eventHub.addEventListener("sizeChosen", event => {
+    const size = event.detail.size
+
+    const contentTarget = document.querySelectorAll(".score")
+
+    contentTarget.classList = "score"
+    contentTarget.classList.add(size)
+})
