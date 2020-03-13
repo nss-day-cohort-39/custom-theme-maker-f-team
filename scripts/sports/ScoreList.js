@@ -16,6 +16,16 @@ const render = scoreCollection => {
     `
 }
 
+eventHub.addEventListener("colorChosen", event => {
+    const color = event.detail.color
+
+    const contentTarget = document.querySelector(".scores")
+
+    contentTarget.classList = "conainer__panel scores"
+    contentTarget.classList.add(color)
+})
+
+
 eventHub.addEventListener("sizeSelected", event => {
     const size = event.detail.size
 

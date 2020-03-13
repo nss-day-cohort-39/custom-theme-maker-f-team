@@ -16,6 +16,16 @@ const render = favoriteCollection => {
     `
 }
 
+
+eventHub.addEventListener("colorChosen", event => {
+    const color = event.detail.color
+
+    const contentTarget = document.querySelector(".favorites")
+
+    contentTarget.classList = "container__panel favorites"
+    contentTarget.classList.add(color)
+})
+
 eventHub.addEventListener("sizeSelected", event => {
     const size = event.detail.size
 
