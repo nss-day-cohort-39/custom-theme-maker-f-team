@@ -1,5 +1,5 @@
 export const FavoriteItem = favorite => `
-    <section class="favoriteItem">
+    <section class="favoriteItem" id="favorite--${favorite.id}">
         <header class="favoriteItem_header">
             <h2>${favorite.title}</h2>
         </header>
@@ -9,3 +9,4 @@ export const FavoriteItem = favorite => `
         <p class="favoriteItem_date">Date: ${favorite.timestamp}</p>
     </section>
 `
+

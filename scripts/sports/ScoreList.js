@@ -16,14 +16,31 @@ const render = scoreCollection => {
     `
 }
 
-const eventHub = document.querySelector("#container")
+
 
 eventHub.addEventListener("sizeChosen", event => {
     const size = event.detail.size
 
-    const contentTarget = document.querySelectorAll(".score")
+    const scoreNodeList = document.querySelectorAll(".score")
 
-    contentTarget.classList = "score"
+    const scoreArray = Array.from(scoreNodeList)
+
+    scoreArray.map(object => {
+        object.classList = "score"
+        object.classList.add(size)
+    })
+})
+
+eventHub.addEventListener("colorChosen", event => {
+    const color = event.detail.color
+
+    const contentTarget = document.querySelector(".scores")
+
+    contentTarget.classList = "conainer__panel scores"
+    contentTarget.classList.add(color)
+})
+
+
 eventHub.addEventListener("sizeSelected", event => {
     const size = event.detail.size
 
