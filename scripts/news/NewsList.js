@@ -25,19 +25,21 @@ eventHub.addEventListener("sizeChosen", event => {
     const scoreNodeList = document.querySelectorAll(".newsItem")
 
     const scoreArray = Array.from(scoreNodeList)
-
+    const sizeClasses = ["onepixel", "threepixels", "fivepixels"]
     scoreArray.map(object => {
-        object.classList = "newsItem"
+        sizeClasses.map(sizeClass => object.classList.remove(sizeClass))
         object.classList.add(size)
     })
-})
+}
+)
+
 
 eventHub.addEventListener("colorChosen", event => {
     const color = event.detail.color
 
     const contentTarget = document.querySelector(".news")
-
-    contentTarget.classList = "container__panel news"
+    const colorClassValueList = ["red", "purple", "blue", "green"]
+    colorClassValueList.map(colorClass => contentTarget.classList.remove(colorClass))
     contentTarget.classList.add(color)
 })
 
