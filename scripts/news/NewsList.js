@@ -43,10 +43,11 @@ eventHub.addEventListener("colorChosen", event => {
     contentTarget.classList.add(color)
 })
 
+
 eventHub.addEventListener("sizeSelected", event => {
     const size = event.detail.size
+
     const contentTarget = document.querySelector(".news")
-    
     const sizeClasses = ["xsmall", "small", "large", "xlarge"]
     sizeClasses.map(sizeClass => contentTarget.classList.remove(sizeClass))
     contentTarget.classList.add(size)
