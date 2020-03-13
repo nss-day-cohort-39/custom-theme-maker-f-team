@@ -1,6 +1,8 @@
 import { useNews } from "./NewsProvider.js"
 import { NewsItem } from "./NewsItem.js"
 
+const eventHub = document.querySelector("#container")
+
 export const NewsList = () => {
     const newsItems = useNews()
     return render(newsItems)
@@ -23,4 +25,12 @@ eventHub.addEventListener("colorChosen", event => {
 
     contentTarget.classList = "container__panel scores"
     contentTarget.classList.add(color)
+
+eventHub.addEventListener("sizeSelected", event => {
+    const size = event.detail.size
+
+    const contentTarget = document.querySelector(".news")
+
+    contentTarget.classList = "container__panel news"
+    contentTarget.classList.add(size)
 })
