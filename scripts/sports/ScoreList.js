@@ -25,8 +25,10 @@ eventHub.addEventListener("sizeChosen", event => {
 
     const scoreArray = Array.from(scoreNodeList)
 
+    const sizeClasses = ["xsmall", "small", "large", "xlarge"]
+
     scoreArray.map(object => {
-        object.classList = "score"
+        sizeClasses.map(sizeClass => object.classList.remove(sizeClass))
         object.classList.add(size)
     })
 })
@@ -36,7 +38,8 @@ eventHub.addEventListener("colorChosen", event => {
 
     const contentTarget = document.querySelector(".scores")
 
-    contentTarget.classList = "conainer__panel scores"
+    const colorClassValueList = ["red", "purple", "blue", "green"]
+    colorClassValueList.map(colorClass => contentTarget.classList.remove(colorClass))
     contentTarget.classList.add(color)
 })
 
@@ -46,6 +49,7 @@ eventHub.addEventListener("sizeSelected", event => {
 
     const contentTarget = document.querySelector(".scores")
 
-    contentTarget.classList = "container__panel scores"
+    const sizeClasses = ["onepixel", "threepixels", "fivepixels"]
+    sizeClasses.map(sizeClass => contentTarget.classList.remove(sizeClass))
     contentTarget.classList.add(size)
 })

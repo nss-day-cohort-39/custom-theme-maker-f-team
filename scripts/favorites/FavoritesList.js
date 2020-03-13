@@ -16,8 +16,6 @@ const render = favoriteCollection => {
     `
 }
 
-
-
 eventHub.addEventListener("sizeChosen", event => {
     const size = event.detail.size
 
@@ -25,28 +23,28 @@ eventHub.addEventListener("sizeChosen", event => {
     const scoreNodeList = document.querySelectorAll(".favoriteItem")
 
     const scoreArray = Array.from(scoreNodeList)
-
+    const sizeClasses = ["xsmall", "small", "large", "xlarge"]
     scoreArray.map(object => {
-        object.classList = "favoriteItem"
+        sizeClasses.map(sizeClass => object.classList.remove(sizeClass))
         object.classList.add(size)
     })
-
 })
 
 eventHub.addEventListener("colorChosen", event => {
     const color = event.detail.color
-
     const contentTarget = document.querySelector(".favorites")
-
-    contentTarget.classList = "container__panel favorites"
+    const colorClassValueList = ["red", "purple", "blue", "green"]
+    colorClassValueList.map(colorClass => contentTarget.classList.remove(colorClass))
     contentTarget.classList.add(color)
 })
+
+
 
 eventHub.addEventListener("sizeSelected", event => {
     const size = event.detail.size
 
     const contentTarget = document.querySelector(".favorites")
-
-    contentTarget.classList = "container__panel favorites"
+    const sizeClasses = ["onepixel", "threepixels", "fivepixels"]
+    sizeClasses.map(sizeClass => contentTarget.classList.remove(sizeClass))
     contentTarget.classList.add(size)
 })
