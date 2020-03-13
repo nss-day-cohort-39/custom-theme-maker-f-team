@@ -27,3 +27,11 @@ eventHub.addEventListener("sizeChosen", event => {
     contentTarget.classList.add(size)
 
 })
+eventHub.addEventListener("sizeSelected", event => {
+    const size = event.detail.size
+
+    const contentTarget = document.querySelector(".favorites")
+
+    contentTarget.classList = "container__panel favorites"
+    contentTarget.classList.add(size)
+})

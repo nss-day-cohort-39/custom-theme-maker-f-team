@@ -25,3 +25,20 @@
 .fivepixels {
     border: 5px black solid
 }
+
+
+.xsmall {
+    font-size: x-small;
+}
+
+.small {
+    font-size: small;
+}
+
+.large {
+    font-size: large;
+}
+
+.xlarge {
+    font-size: x-large;
+}

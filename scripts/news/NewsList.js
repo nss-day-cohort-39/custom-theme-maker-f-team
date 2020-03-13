@@ -1,6 +1,8 @@
 import { useNews } from "./NewsProvider.js"
 import { NewsItem } from "./NewsItem.js"
 
+const eventHub = document.querySelector("#container")
+
 export const NewsList = () => {
     const newsItems = useNews()
     return render(newsItems)
@@ -20,6 +22,14 @@ eventHub.addEventListener("sizeChosen", event => {
     const size = event.detail.size
 
     const contentTarget = document.querySelectorAll(".new")
+
+    contentTarget.classList = "new"
+    contentTarget.classList.add(size)
+
+eventHub.addEventListener("sizeSelected", event => {
+    const size = event.detail.size
+
+    const contentTarget = document.querySelector(".new")
 
     contentTarget.classList = "new"
     contentTarget.classList.add(size)

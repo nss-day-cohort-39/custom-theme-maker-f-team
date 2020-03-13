@@ -1,6 +1,8 @@
 import { useScores } from "./ScoreProvider.js"
 import { Score } from "./Score.js"
 
+const eventHub = document.querySelector("#container")
+
 export const ScoreList = () => {
     const scores = useScores()
     return render(scores)
@@ -22,5 +24,11 @@ eventHub.addEventListener("sizeChosen", event => {
     const contentTarget = document.querySelectorAll(".score")
 
     contentTarget.classList = "score"
+eventHub.addEventListener("sizeSelected", event => {
+    const size = event.detail.size
+
+    const contentTarget = document.querySelector(".scores")
+
+    contentTarget.classList = "container__panel scores"
     contentTarget.classList.add(size)
 })
