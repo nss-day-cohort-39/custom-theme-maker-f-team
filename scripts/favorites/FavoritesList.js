@@ -23,7 +23,7 @@ eventHub.addEventListener("sizeChosen", event => {
     const scoreNodeList = document.querySelectorAll(".favoriteItem")
 
     const scoreArray = Array.from(scoreNodeList)
-    const sizeClasses = ["xsmall", "small", "large", "xlarge"]
+    const sizeClasses = ["onepixel", "threepixels", "fivepixels"]
     scoreArray.map(object => {
         sizeClasses.map(sizeClass => object.classList.remove(sizeClass))
         object.classList.add(size)
@@ -44,7 +44,7 @@ eventHub.addEventListener("sizeSelected", event => {
     const size = event.detail.size
 
     const contentTarget = document.querySelector(".favorites")
-    const sizeClasses = ["onepixel", "threepixels", "fivepixels"]
+    const sizeClasses = ["xsmall", "small", "large", "xlarge"]
     sizeClasses.map(sizeClass => contentTarget.classList.remove(sizeClass))
     contentTarget.classList.add(size)
 })

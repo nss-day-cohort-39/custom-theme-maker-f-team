@@ -25,8 +25,7 @@ eventHub.addEventListener("sizeChosen", event => {
 
     const scoreArray = Array.from(scoreNodeList)
 
-    const sizeClasses = ["xsmall", "small", "large", "xlarge"]
-
+    const sizeClasses = ["onepixel", "threepixels", "fivepixels"]
     scoreArray.map(object => {
         sizeClasses.map(sizeClass => object.classList.remove(sizeClass))
         object.classList.add(size)
@@ -49,7 +48,8 @@ eventHub.addEventListener("sizeSelected", event => {
 
     const contentTarget = document.querySelector(".scores")
 
-    const sizeClasses = ["onepixel", "threepixels", "fivepixels"]
+    const sizeClasses = ["xsmall", "small", "large", "xlarge"]
+
     sizeClasses.map(sizeClass => contentTarget.classList.remove(sizeClass))
     contentTarget.classList.add(size)
 })
