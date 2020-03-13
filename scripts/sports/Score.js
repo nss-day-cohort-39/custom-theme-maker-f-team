@@ -1,5 +1,5 @@
 export const Score = score => `
-    <section class="score">
+    <section class="score" id="score--${score.id}">
         <header class="score__header">
             <h2>${score.team}</h2>
         </header>

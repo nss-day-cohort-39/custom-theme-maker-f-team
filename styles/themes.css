@@ -14,6 +14,17 @@
     background-color: darksalmon;
 }
 
+.onepixel {
+    border: 1px black solid
+}
+
+.threepixels {
+    border: 3px black solid
+}
+
+.fivepixels {
+    border: 5px black solid
+}
 
 
 .xsmall {

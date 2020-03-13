@@ -16,6 +16,21 @@ const render = scoreCollection => {
     `
 }
 
+
+
+eventHub.addEventListener("sizeChosen", event => {
+    const size = event.detail.size
+
+    const scoreNodeList = document.querySelectorAll(".score")
+
+    const scoreArray = Array.from(scoreNodeList)
+
+    scoreArray.map(object => {
+        object.classList = "score"
+        object.classList.add(size)
+    })
+})
+
 eventHub.addEventListener("colorChosen", event => {
     const color = event.detail.color
 
