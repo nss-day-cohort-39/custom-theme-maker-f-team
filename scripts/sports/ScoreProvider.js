@@ -55,4 +55,9 @@ let scores = [
     },
 ]
 
-export const useScores = () => scores.slice()
+export const useScores = () => {
+    scores.sort((a, b) => {
+        return b.points - a.points
+    })
+    return scores.slice()
+}
