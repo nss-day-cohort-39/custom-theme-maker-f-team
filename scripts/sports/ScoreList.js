@@ -13,3 +13,14 @@ const render = scoreCollection => {
         </article>
     `
 }
+
+const eventHub = document.querySelector("#container")
+
+eventHub.addEventListener("colorChosen", event => {
+    const color = event.detail.color
+
+    const contentTarget = document.querySelector(".scores")
+
+    contentTarget.classList = "container__panel scores"
+    contentTarget.classList.add(color)
+})

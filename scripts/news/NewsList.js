@@ -8,8 +8,19 @@ export const NewsList = () => {
 
 const render = newsCollection => {
     return `
-        <article class="container__panel scores">
+        <article class="container__panel news">
             ${newsCollection.map(news => NewsItem(news)).join("")}
         </article>
     `
 }
+
+const eventHub = document.querySelector("#container")
+
+eventHub.addEventListener("colorChosen", event => {
+    const color = event.detail.color
+
+    const contentTarget = document.querySelector(".news")
+
+    contentTarget.classList = "container__panel scores"
+    contentTarget.classList.add(color)
+})
